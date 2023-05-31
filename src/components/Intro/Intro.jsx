@@ -1,12 +1,13 @@
 import "./Intro.css";
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 const imagesIntro = [
   "images/intro/intro-1.png",
   "images/intro/intro-2.png",
   "images/intro/intro-3.png",
   "images/intro/intro-4.png"
-]
+];
 
 const Intro = (props) => {
   const [images, setImages] = useState([

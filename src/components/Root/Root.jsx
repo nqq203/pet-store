@@ -1,16 +1,23 @@
 import PetShopLogo from '../../assets/images/the-pet-shop-logo.png';
 import { ImSearch } from 'react-icons/im';
 import Navbar from "./Navbar";
-import { useScrollY } from '../hooks';
 import "./Root.css";
 import Footer from "../Footer/Footer";
 import { useState } from 'react';
 import { RxDropdownMenu } from "react-icons/rx";
+import dogs from "../../assets/data/dog.json";
+import cats from "../../assets/data/cat.json";
+import dogItem from "../../assets/data/dogItem.json";
+import catItem from "../../assets/data/catItem.json";
 
 const Header = (props) => {
-  const [scrollY] = useScrollY();
+  const petDogs = dogs;
+  const petCats = cats;
+  const varDogItem = dogItem;
+  const varCatItem = catItem;
   const [isNavExpanded, setIsNavExpanded] = useState(false);
-  // console.log("isNavexpanded", isNavExpanded);
+  const [isClickProduct, setIsClickProduct] = useState("none");
+
   return (
     <>
       <div className='navigation'>
@@ -41,7 +48,7 @@ const Header = (props) => {
           <RxDropdownMenu />
         </button>
       </div>
-      <Navbar scrollY={scrollY} isNavExpanded={isNavExpanded} />
+      <Navbar isNavExpanded={isNavExpanded} petDogs={petDogs} petCats={petCats} varDogItem={varDogItem} varCatItem={varCatItem} isClickProduct={isClickProduct} setIsClickProduct={setIsClickProduct}/>
       <Footer />
     </>
   );

@@ -1,10 +1,9 @@
 import { Outlet, Link } from "react-router-dom";
-
+import {BsFillCartCheckFill} from "react-icons/bs";
 
 const Layout = (props) => {
   const isNavExpanded = props;
   let expanded = isNavExpanded.isNavExpanded;
-  console.log("isNavexpanded", expanded);
   return (
     <>
       <nav className={expanded ? "navbar-container expanded" : "navbar-container"}>
@@ -24,9 +23,9 @@ const Layout = (props) => {
           <li>
             <Link to="/dog" className="navbar-item">CHÓ</Link>
           </li>
-          <li>
-            <Link to="/news" className="navbar-item">TIN TỨC</Link>
-          </li>
+          {/* <li>
+            <Link to="/cart" className="navbar-item cart-item"><BsFillCartCheckFill /></Link>
+          </li> */}
         </ul>
       </nav>
       <Outlet />
